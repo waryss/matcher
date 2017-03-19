@@ -1,0 +1,13 @@
+{
+  "name": "matcher",
+  "version": "0.0.1",
+  "description": "matches words with needs",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.2"
+  }
+}
