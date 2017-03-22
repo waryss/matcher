@@ -7,12 +7,12 @@ import cookieParser from 'cookie-parser';
 import express from 'express';
 import favicon from 'serve-favicon';
 import helmet from 'helmet';
-import mongoose from 'mongoose';
+import search from './app/controllers/search';
 
 // BASIC CONFIG
 const config = {
   // address of mongodb
-  db: process.env.MONGOURI || 'mongodb://localhost:27017/test',
+  db: process.env.ESURI || 'http://localhost:9200/needs',
   // environment
   env: process.env.NODE_ENV || 'development',
   // port on which to listen
@@ -40,7 +40,7 @@ app.use(helmet());
 // load all models
 require(path.join(config.root, 'app/models'));
 // load all controllers
-app.use('/', require(path.join(config.root, 'app/controllers')));
+app.use('/', search);
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
   const err = new Error('Not Found');
@@ -56,20 +56,12 @@ app.use((err, req, res, next) => {
   });
 });
 
-// MONGOOSE SET-UP
-mongoose.connect(config.db);
-const db = mongoose.connection;
-db.on('error', () => {
-  throw new Error(`unable to connect to database at ${config.db}`);
-});
-
 // START AND STOP
 const server = app.listen(config.port, () => {
   console.log(`listening on port ${config.port}`);
 });
 process.on('SIGINT', () => {
   console.log('\nshutting down!');
-  db.close();
   server.close();
   process.exit();
 });

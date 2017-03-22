@@ -1,0 +1,12 @@
+extends layout
+
+block head
+  title= title
+
+block body
+  form(method='GET' action='#')
+    .box
+      .container-3
+        span.icon
+          i.fa.fa-search
+        input#search(type='search', name='search' placeholder='Rechercher...' autocomplete='off')

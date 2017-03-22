@@ -99,7 +99,7 @@ gulp.task('build', ['build:client', 'build:server']);
 // build client-side files
 gulp.task('build:client', [...CLIENT].concat('bower'));
 // build server-side files
-gulp.task('build:server', ['transpile', 'views', 'ln']);
+gulp.task('build:server', ['transpile', 'views']);
 
 // optimize images
 gulp.task('images', () =>
@@ -262,13 +262,13 @@ gulp.task('views', () =>
 );
 
 // symlink package.json and node_modules to destination
-gulp.task('ln', () =>
-  vfs.src(['package.json', 'node_modules'], {
-    followSymlinks: false
-  })
-    .pipe(vfs.symlink(DEST))
-    .pipe($.print(fp => `symlink: ${fp}`))
-);
+// gulp.task('ln', () =>
+//   vfs.src(['package.json', 'node_modules'], {
+//     followSymlinks: false
+//   })
+//     .pipe(vfs.symlink(DEST))
+//     .pipe($.print(fp => `symlink: ${fp}`))
+// );
 
 // create clean tasks
 for (const task of ALL) {
