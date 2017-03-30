@@ -7,6 +7,7 @@ import cookieParser from 'cookie-parser';
 import express from 'express';
 import favicon from 'serve-favicon';
 import helmet from 'helmet';
+import index from './app/controllers/index';
 import search from './app/controllers/search';
 
 // BASIC CONFIG
@@ -40,7 +41,8 @@ app.use(helmet());
 // load all models
 require(path.join(config.root, 'app/models'));
 // load all controllers
-app.use('/', search);
+app.use('/', index);
+app.use('/search', search);
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
   const err = new Error('Not Found');

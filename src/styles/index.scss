@@ -1,0 +1,118 @@
+    // fonts
+    body {
+      min-height: 100%;
+      margin: 0;
+      padding: 0;
+      font: 400 1.4rem 'Lato', Verdana, Helvetica, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      height: 400px;
+    }
+
+    .m-button-container {
+      width: 50%;
+      text-align: center;
+    }
+
+    section a {
+      margin: 1rem 1rem;
+      font-size: 1.5rem;
+      padding: 1rem 1rem;
+      display: inline-block;
+      background-color: #cc9e66;
+      border: 1px solid transparent;
+      color: #ffffff;
+      font-weight: 300;
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+      width: 150px;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      text-decoration: none;
+    }
+
+    section a:hover {
+      background-color: #ffffff;
+      color: #cc9e66;
+      border-color: #cc9e66;
+    }
+
+    .search-box{
+      margin: 100px auto;
+      width: 100%;
+    }
+
+    .container-3{
+      width: 100%;
+      vertical-align: middle;
+      white-space: nowrap;
+      position: relative;
+      border-color: #cc9e66;
+    }
+
+    .container-3 input#search{
+      width: 350px;
+      height: 50px;
+      background: #fcfaf7;
+      border: none;
+      float: left;
+      color: #cc9e66;
+      padding-left: 45px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      font: 12 1.4rem 'Lato', Verdana, Helvetica, sans-serif;
+      border-color: #cc9e66;
+    }
+
+    .container-3 input#search::-webkit-input-placeholder {
+      color: #cc9e66;
+    }
+
+    .container-3 input#search:-moz-placeholder { /* Firefox 18- */
+      color: #cc9e66;
+    }
+
+    .container-3 input#search::-moz-placeholder {  /* Firefox 19+ */
+      color: #cc9e66;
+    }
+
+    .container-3 input#search:-ms-input-placeholder {
+      color: #cc9e66;
+    }
+
+    .container-3 .icon{
+      position: absolute;
+      top: 50%;
+      margin-left: 10px;
+      margin-top: 8px;
+      z-index: 1;
+      color: #cc9e66;
+
+      -webkit-transition: all .55s ease;
+      -moz-transition: all .55s ease;
+      -ms-transition: all .55s ease;
+      -o-transition: all .55s ease;
+      transition: all .55s ease;
+    }
+
+    .container-3 input#search:focus, .container-3 input#search:active{
+      outline:none;
+    }
+
+    .container-3:hover .icon{
+      margin-top: 8px;
+      color: #cc9e66;
+
+      -webkit-transform:scale(1.5); /* Safari and Chrome */
+      -moz-transform:scale(1.5); /* Firefox */
+      -ms-transform:scale(1.5); /* IE 9 */
+      -o-transform:scale(1.5); /* Opera */
+      transform:scale(1.5);
+    }
