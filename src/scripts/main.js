@@ -1,3 +1,3 @@
-$('#search').autocomplete({
-  alert('You selected: ');
+$("#search").change(function(){
+    alert("The text has been changed.");
 });

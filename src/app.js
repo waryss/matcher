@@ -12,7 +12,7 @@ import search from './app/controllers/search';
 // BASIC CONFIG
 const config = {
   // address of mongodb
-  db: process.env.ESURI || 'http://localhost:9200/needs',
+  db: process.env.ESURI || 'http://localhost:9200',
   // environment
   env: process.env.NODE_ENV || 'development',
   // port on which to listen

@@ -28,7 +28,7 @@ router.get('/', (req, res, next) => {
     body: {
       query: {
         query_string:{
-          query: req.query.search
+          query: req.query.s
         }
       }
     }
@@ -36,7 +36,6 @@ router.get('/', (req, res, next) => {
     res.send(resp.hits.hits);
   }, function (err) {
     res.send(err);
-    console.log(err.message);
   });
   res.render('search', {
     result: []
